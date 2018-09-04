@@ -27,7 +27,6 @@ public class Main extends JavaPlugin {
 				
 				valeur = rand.nextInt(nbMessage);
 				Bukkit.broadcastMessage(messages.get(valeur).replace("&", "§"));
-				System.out.println("bite");
 				
 			}
 		}.runTaskTimer(this, 0, cooldown);
