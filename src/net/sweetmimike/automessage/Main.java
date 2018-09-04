@@ -30,8 +30,15 @@ public class Main extends JavaPlugin {
 				System.out.println("salut");
 				System.out.println("salut");
 				System.out.println("salut");
+				System.out.println("salut");
 				
 			}
 		}.runTaskTimer(this, 0, cooldown);
+	}
+	
+	@Override
+	public void onDisable() {
+		// TODO Auto-generated method stub
+		super.onDisable();
 	}
 }
