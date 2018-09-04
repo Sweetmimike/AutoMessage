@@ -22,7 +22,8 @@ public class Main extends JavaPlugin {
 			@Override
 			public void run() {
 				int valeur = rand.nextInt(3);
-				Bukkit.broadcastMessage(messages.get(valeur));
+				Bukkit.broadcastMessage(messages.get(valeur).replace("&", "§"));
+				Bukkit.broadcastMessage("yoyo");
 				
 			}
 		}.runTaskTimer(this, 0, 40);
