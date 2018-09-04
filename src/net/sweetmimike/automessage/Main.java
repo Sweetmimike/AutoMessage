@@ -10,10 +10,13 @@ import org.bukkit.scheduler.BukkitRunnable;
 public class Main extends JavaPlugin {
 	
 	List<String> messages = getConfig().getStringList("message");
+	int nbMessage = messages.size();
+	int valeur;
+	long cooldown = getConfig().getLong("cooldown") * 20;
 	
 	@Override
 	public void onEnable() {
-		System.out.println("salut");
+		
 		saveDefaultConfig();
 		super.onEnable();
 		
@@ -21,11 +24,11 @@ public class Main extends JavaPlugin {
 			Random rand = new Random();
 			@Override
 			public void run() {
-				int valeur = rand.nextInt(3);
+				
+				valeur = rand.nextInt(nbMessage);
 				Bukkit.broadcastMessage(messages.get(valeur).replace("&", "§"));
-				Bukkit.broadcastMessage("yoyo");
 				
 			}
-		}.runTaskTimer(this, 0, 40);
+		}.runTaskTimer(this, 0, cooldown);
 	}
 }
