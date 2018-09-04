@@ -27,6 +27,9 @@ public class Main extends JavaPlugin {
 				
 				valeur = rand.nextInt(nbMessage);
 				Bukkit.broadcastMessage(messages.get(valeur).replace("&", "§"));
+				System.out.println("salut");
+				System.out.println("salut");
+				System.out.println("salut");
 				
 			}
 		}.runTaskTimer(this, 0, cooldown);
