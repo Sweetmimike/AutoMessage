@@ -16,8 +16,6 @@ public class AutoMessager {
 	
 	public AutoMessager(Main main) {
 		this.main = main;
-		messages = main.getConfig().getStringList("message");
-		nbMessage = messages.size();
 		cooldown = main.getConfig().getLong("cooldown") * 20;
 	}
 	
@@ -29,12 +27,24 @@ public class AutoMessager {
 			Random rand = new Random();
 			@Override
 			public void run() {
-				
+				messages = main.getConfig().getStringList("message");
+				nbMessage = messages.size();
 				valeur = rand.nextInt(nbMessage);
 				Bukkit.broadcastMessage(messages.get(valeur).replace("&", "§"));
 				
+				
 			}
 		}.runTaskTimer(main, 0, cooldown);
+	}
+	
+	public List<String> getMessages() {
+		return messages;
+	}
+	
+	public void addMessage(String msg) {
+		messages.add(msg);
+		main.getConfig().set("message", messages);
+		main.saveConfig();
 	}
 
 }
