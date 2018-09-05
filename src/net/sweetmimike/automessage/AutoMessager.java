@@ -40,5 +40,11 @@ public class AutoMessager {
 	public List<String> getMessages() {
 		return messages;
 	}
+	
+	public void addMessage(String msg) {
+		messages.add(msg);
+		main.getConfig().set("message", messages);
+		main.saveConfig();
+	}
 
 }
