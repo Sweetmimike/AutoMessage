@@ -12,7 +12,7 @@ public class Main extends JavaPlugin {
 	public void onEnable() {
 		
 		messager.onRunMessage();
-		getCommand("automessage").setExecutor(new CommandAutoMessage());
+		getCommand("automessage").setExecutor(new CommandAutoMessage(this, messager));
 		saveDefaultConfig();
 		super.onEnable();
 	}

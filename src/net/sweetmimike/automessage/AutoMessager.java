@@ -36,5 +36,9 @@ public class AutoMessager {
 			}
 		}.runTaskTimer(main, 0, cooldown);
 	}
+	
+	public List<String> getMessages() {
+		return messages;
+	}
 
 }
