@@ -28,11 +28,10 @@ public class CommandAutoMessage implements CommandExecutor {
 			}
 			messageToAdd.replace("&", "§");
 			messageToAdd = messageToAdd.trim();
-			main.getConfig().getStringList("message").add(messageToAdd);
 			am.getMessages().add(messageToAdd);
-			System.out.println(am.getMessages().toString());
 			main.getConfig().set("message", am.getMessages());
 			main.saveConfig();
+			return true;
 		}
 		
 		
