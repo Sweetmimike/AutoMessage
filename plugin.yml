@@ -2,3 +2,6 @@ main: net.sweetmimike.automessage.Main
 name: automessage
 version: 1.0
 author: sweetmimike
+commands:
+  automessage:
+    description: main command
